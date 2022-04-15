@@ -86,7 +86,7 @@ function Component() {
   const count = useSelector(state => state.count);
 
   return <div>
-    <button onClick={() => setState(state => state.count + 1)}>
+    <button onClick={() => setState(state => ({ count: state.count + 1 }))}>
       {count}
     </button>
   </div>
