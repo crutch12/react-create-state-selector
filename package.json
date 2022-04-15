@@ -1,0 +1,58 @@
+{
+  "name": "react-create-state-selector",
+  "version": "0.0.1",
+  "description": "Generate useSeletector hook for any react state (useState/useReducer/etc...)",
+  "source": "src/react-create-state-selector.ts",
+  "main": "dist/react-create-state-selector.js",
+  "module": "dist/react-create-state-selector.mjs",
+  "unpkg": "dist/react-create-state-selector.umd.js",
+  "types": "dist/react-create-state-selector.d.ts",
+  "amdName": "ReactCreateStateSelector",
+  "sideEffects": false,
+  "scripts": {
+    "example": "parcel example/index.html --dist-dir example/dist --open",
+    "build": "microbundle --globals react=React --strict --no-compress",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crutch12/react-create-state-selector.git"
+  },
+  "keywords": [
+    "react",
+    "useSelector",
+    "hook",
+    "state",
+    "useState",
+    "useReducer"
+  ],
+  "author": "@crutch12",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crutch12/react-create-state-selector/issues"
+  },
+  "homepage": "https://github.com/crutch12/react-create-state-selector#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "microbundle": "^0.14.2",
+    "parcel": "^2.4.1",
+    "prettier": "^2.6.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "peerDependencies": {
+    "react": ">16.8"
+  },
+  "dependencies": {
+    "fast-equals": "^3.0.1"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ]
+}
