@@ -1,6 +1,6 @@
 {
   "name": "react-create-state-selector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate useSeletector hook for any react state (useState/useReducer/etc...)",
   "source": "src/react-create-state-selector.ts",
   "main": "dist/react-create-state-selector.js",
