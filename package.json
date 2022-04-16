@@ -45,7 +45,7 @@
     "typescript": "^4.6.3"
   },
   "peerDependencies": {
-    "react": ">16.8"
+    "react": ">=16.8"
   },
   "dependencies": {
     "fast-equals": "^3.0.1"
