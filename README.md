@@ -135,7 +135,7 @@ function Component() {
 
   const doWithState = (callback: (state: ReturnType<typeof getState>) => any) => {
     const state = getState();
-    return () => callback(state);
+    return callback(state);
   }
 
   return <div>
