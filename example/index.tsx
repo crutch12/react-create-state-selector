@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { createSelectorHook } from '../src/react-create-state-selector';
+import { createGetStateFunction, createSelectorHook } from '../src/react-create-state-selector';
 
 const reducer = (state: { count: number; str: string }, action: { type: 'count' | 'str' }) => {
   if (action.type === 'count') {
@@ -14,18 +14,21 @@ const reducer = (state: { count: number; str: string }, action: { type: 'count' 
 };
 
 function useCounter() {
-  let [state, dispatch] = useReducer(reducer, { count: 0, str: 'none' });
+  const [state, dispatch] = useReducer(reducer, { count: 0, str: 'none' });
 
   const useSelector = createSelectorHook(state);
+
+  const getState = createGetStateFunction(state);
 
   return {
     useSelector,
     dispatch,
+    getState,
   };
 }
 
 export const CounterDisplay = () => {
-  const { useSelector, dispatch } = useCounter();
+  const { useSelector, dispatch, getState } = useCounter();
 
   const count = useSelector((s) => {
     return { count: s.count };
@@ -40,6 +43,7 @@ export const CounterDisplay = () => {
       <div>str: {str}</div>
       <button onClick={() => dispatch({ type: 'count' })}>count = count + 1</button>
       <button onClick={() => dispatch({ type: 'str' })}>str = Math.random</button>
+      <button onClick={() => alert(JSON.stringify(getState(), null, 2))}>get state</button>
     </div>
   );
 };

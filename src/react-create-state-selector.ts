@@ -41,3 +41,12 @@ export function createSelectorHook<State = any>(state: State, isEqualFn: IsEqual
     return selected;
   }, []);
 }
+
+export function createGetStateFunction<State = any>(state: State) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  return useCallback(() => stateRef.current, []);
+}
