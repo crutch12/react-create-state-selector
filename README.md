@@ -1,5 +1,7 @@
 # react-create-state-selector
 
+[![npm version](https://badge.fury.io/js/react-create-state-selector.svg)](https://badge.fury.io/js/react-create-state-selector)
+
 1) Generate `useSeletector` hook for any react state (`useState`/`useReducer`/etc...)
 2) Generate `getState` function for any react state
 
